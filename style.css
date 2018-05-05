@@ -25,17 +25,15 @@ root: {
 	text-indent: -9999px;
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	overflow: hidden;
 }
 
-.main_block {
-	display: inline-block;
-	overflow: hidden;
-}
+
 
 #loader {
-	animation: appearance 0.5s;
+	display: flex;
+	animation: appearance 1s;
 	animation-fill-mode: forwards;
+	overflow: hidden;
 	position: absolute;
 	top: 50%;
 	left: 40%;
@@ -43,19 +41,57 @@ root: {
 	border: 1px solid;
 	border-color: #FFFFFF;
 	border-radius: 180px;
-	/*transform: translateY(-100px);*/
-	width: 28%;
-	height: 40%;
-	margin: auto;
+	width: 40vh;
+	height: 40vh;
 }
 
-#loader img {
-	background: url('image/load-more.png') no-repeat 0 -53px;
+#round {
 	width: 47px;
 	height: 47px;
 }
 
+#pictures-slide {
+	background-repeat: no-repeat;
+	/*align-items: center;*/
+	opacity: 1;
+	background-position: center center;
+	width: 125px;
+	height: 125px;
+	position: absolute;
+	-webkit-animation: pictures 6s;
+	-o-animation: pictures 6s;
+	animation: pictures 6s;
+	-webkit-animation-delay: 2s;
+	-o-animation-delay: 2s;
+	animation-delay: 2s;
+}
+
+.text {
+	margin-bottom: 2.5rem;
+	align-self: flex-end;
+	/* bottom: 0; */
+	/* display: inline-block; */
+	/*vertical-align: text-bottom;*/
+	/* object-position: center; */
+	/* padding-top: 200px; */
+	text-align: center;
+}
+
+.month {
+	/* bottom: 0px; */
+	margin-bottom: 1rem;
+}
+
+
 @keyframes appearance {
 	from {bottom: 0px;}
-	to {top: 50px;}
+	to {top: 220px;}
+}
+
+@keyframes pictures {
+	0% {background-image: url(image/loader/01.png);}   
+	25% {background-image: url(image/loader/02.png);}
+	50% {background-image: url(image/loader/03.png);}
+	75% {background-image: url(image/loader/04.png);}
+	100% {background-image: url(image/loader/01.png);}
 }
