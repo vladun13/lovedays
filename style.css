@@ -5,12 +5,9 @@ body {
 	font-size: 12px;
 	margin: 0px;
 	padding: 0px;
-	background-color: blue;
+	background-color: #00007E;
 }
 
-root: {
-	height: 100%;
-}
 
 #awwards {
 	position: fixed;
@@ -31,6 +28,7 @@ root: {
 
 #loader {
 	display: flex;
+	justify-content: center;
 	animation: appearance 1s;
 	animation-fill-mode: forwards;
 	overflow: hidden;
@@ -45,40 +43,48 @@ root: {
 	height: 40vh;
 }
 
+.pie {
+	border: 2px solid #FF4D4D;
+	animation: radius;
+	animation-delay: 3s;
+	animation-iteration-count: 1;
+}
+
 #round {
+	display: none;
 	width: 47px;
 	height: 47px;
 }
 
 #pictures-slide {
+	animation-fill-mode: both;
 	background-repeat: no-repeat;
-	/*align-items: center;*/
 	opacity: 1;
 	background-position: center center;
 	width: 125px;
 	height: 125px;
 	position: absolute;
-	-webkit-animation: pictures 6s;
-	-o-animation: pictures 6s;
-	animation: pictures 6s;
-	-webkit-animation-delay: 2s;
-	-o-animation-delay: 2s;
-	animation-delay: 2s;
+	animation: pictures 3s 1.5s, begin 1s 1.5s 1;
+	animation-iteration-count: 3;
+	animation-timing-function: step-end;
 }
 
 .text {
 	margin-bottom: 2.5rem;
 	align-self: flex-end;
-	/* bottom: 0; */
-	/* display: inline-block; */
-	/*vertical-align: text-bottom;*/
-	/* object-position: center; */
-	/* padding-top: 200px; */
 	text-align: center;
+	animation: text_appear 1s 1.5s 1;
+	animation-fill-mode: forwards;
+}
+
+.date {
+	display: inline-block;
+	overflow: hidden;
+	animation: days 3s 2.5s;
+	animation-fill-mode: both;
 }
 
 .month {
-	/* bottom: 0px; */
 	margin-bottom: 1rem;
 }
 
@@ -94,4 +100,24 @@ root: {
 	50% {background-image: url(image/loader/03.png);}
 	75% {background-image: url(image/loader/04.png);}
 	100% {background-image: url(image/loader/01.png);}
+}
+
+@keyframes days {
+	0% {transform: translateX(0px);}
+	100% {transform: translateX(300px);}
+}
+
+
+@keyframes begin {
+	from {transform: translateY(0px);}
+	to {transform: translateY(60px);}
+}
+
+/*@keyframes radius {
+	0% {}
+}*/
+
+@keyframes text_appear {
+	from {transform: translateY(0px);}
+	to {transform: translateY(-60px);}
 }
