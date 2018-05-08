@@ -64,7 +64,7 @@ body {
 	width: 125px;
 	height: 125px;
 	position: absolute;
-	animation: pictures 3s 1.5s, begin 1s 1.5s 1;
+	animation: pictures 3s 1.5s, begin 2s 1s;
 	animation-iteration-count: 3;
 	animation-timing-function: step-end;
 }
