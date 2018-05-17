@@ -29,14 +29,16 @@ body {
 #loader {
 	display: flex;
 	justify-content: center;
-	animation: appearance 1s;
+	animation: appearance 1s, radius 3s;
 	animation-fill-mode: forwards;
+	outline: 5px black;
 	overflow: hidden;
 	position: absolute;
 	top: 50%;
 	left: 40%;
 	bottom: 0;
-	border: 1px solid;
+	border: 2px solid #FF4D4D;
+	/*transform: rotate(360deg);*/
 	border-color: #FFFFFF;
 	border-radius: 180px;
 	width: 40vh;
@@ -45,9 +47,9 @@ body {
 
 .pie {
 	border: 2px solid #FF4D4D;
-	animation: radius;
+	/*animation: radius;
 	animation-delay: 3s;
-	animation-iteration-count: 1;
+	animation-iteration-count: 1;*/
 }
 
 #round {
@@ -69,25 +71,46 @@ body {
 	animation-timing-function: step-end;
 }
 
-.text {
+.anim-words {
+	display: inline-block;
 	margin-bottom: 2.5rem;
 	align-self: flex-end;
 	text-align: center;
+	/*overflow: hidden;*/
 	animation: text_appear 1s 1.5s 1;
 	animation-fill-mode: forwards;
 }
 
 .date {
-	display: inline-block;
-	overflow: hidden;
+	/*display: inline-block;*/
+	/*overflow: hidden;*/
 	animation: days 3s 2.5s;
-	animation-fill-mode: both;
+	/*animation-fill-mode: both;*/
 }
 
+.date:after {
+	content: "";
+}
+/*
+.date span:nth-child(2) {
+	animation-delay: 4s;
+}
+
+.date span:nth-child(3) {
+	animation-delay: 5s;
+}
+.date span:nth-child(4) {
+	animation-delay: 6s;
+}*/
+/*.date span:nth-child(2) {
+	animation-delay: 4s;
+}
+*/
+/*
 .month {
 	margin-bottom: 1rem;
 }
-
+*/
 
 @keyframes appearance {
 	from {bottom: 0px;}
@@ -103,8 +126,10 @@ body {
 }
 
 @keyframes days {
-	0% {transform: translateX(0px);}
-	100% {transform: translateX(300px);}
+	0% {content:"13 Thursday";}
+	30% {content:"14 Friday";}
+	60% {content:"15 Saturday";}
+	100% {content:"16 Sunday";}
 }
 
 
@@ -120,4 +145,12 @@ body {
 @keyframes text_appear {
 	from {transform: translateY(0px);}
 	to {transform: translateY(-60px);}
+}
+
+
+@keyframes radius {
+	0% {/*border-radius: 185px; border-color: red*/outline: 5px red; transform: rotate(90deg);}
+	30% {outline: 5px red; transform: rotate(180deg);}
+	60% {outline: 5px red; transform: rotate(270deg);}
+	100% {outline: 5px red; transform: rotate(360deg);}	
 }
