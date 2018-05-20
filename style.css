@@ -40,9 +40,10 @@ body {
 	border: 2px solid #FF4D4D;
 	/*transform: rotate(360deg);*/
 	border-color: #FFFFFF;
-	border-radius: 180px;
+	border-radius: 50%;
 	width: 40vh;
 	height: 40vh;
+	box-shadow: 0px 0px 0px 5px blue, 0px 0px 0px 7px red;
 }
 
 .pie {
@@ -82,16 +83,23 @@ body {
 }
 
 .date {
-	/*display: inline-block;*/
-	/*overflow: hidden;*/
-	animation: days 3s 2.5s;
-	/*animation-fill-mode: both;*/
-}
-
-.date:after {
-	content: "";
+	display: inline-block;
+	overflow: hidden;
+	animation-fill-mode: both;
 }
 /*
+.date:after {
+	content: "";
+	animation: days 3s 2.5s;
+}*/
+.date span {
+	animation: leftToRight 7s linear 1 3s;
+	animation-delay: 3s;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+}
+
 .date span:nth-child(2) {
 	animation-delay: 4s;
 }
@@ -101,11 +109,8 @@ body {
 }
 .date span:nth-child(4) {
 	animation-delay: 6s;
-}*/
-/*.date span:nth-child(2) {
-	animation-delay: 4s;
 }
-*/
+
 /*
 .month {
 	margin-bottom: 1rem;
@@ -124,14 +129,24 @@ body {
 	75% {background-image: url(image/loader/04.png);}
 	100% {background-image: url(image/loader/01.png);}
 }
-
+/*
 @keyframes days {
 	0% {content:"13 Thursday";}
 	30% {content:"14 Friday";}
 	60% {content:"15 Saturday";}
 	100% {content:"16 Sunday";}
 }
+*/
 
+@keyframes leftToRight {
+	0% { opacity: 0; }
+	5% { opacity: 0; transform: translateX(-100px); }
+	10% { opacity: 1; transform: translateX(0px); }
+	25% { opacity: 1; transform: translateX(0px); }
+	30% { opacity: 0; transform: translateX(100px); }
+	80% { opacity: 0; }
+	100% { opacity: 0; }
+}
 
 @keyframes begin {
 	from {transform: translateY(0px);}
@@ -148,9 +163,9 @@ body {
 }
 
 
-@keyframes radius {
-	0% {/*border-radius: 185px; border-color: red*/outline: 5px red; transform: rotate(90deg);}
+/*@keyframes radius {*/
+	/*0% {*//*border-radius: 185px; border-color: red*//*outline: 5px red; transform: rotate(90deg);}
 	30% {outline: 5px red; transform: rotate(180deg);}
 	60% {outline: 5px red; transform: rotate(270deg);}
-	100% {outline: 5px red; transform: rotate(360deg);}	
-}
+	100% {outline: 5px red; transform: rotate(360deg);}*/	
+/*}*/
