@@ -42,15 +42,12 @@ body {
 	justify-content: center;
 	animation: appearance 1s, radius 3s, finish 1s 8s;
 	animation-fill-mode: forwards;
-	outline: 5px black;
-	/*overflow: hidden;*/
+	overflow: hidden;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%);
 	bottom: 0;
-	box-shadow:  inset 0px 0px 0px 10px #00007E, inset 0 0 0 12px rgba(255,255,255,1);
-	border: 1px solid blue;
 	border-radius: 50%;
 	width: 40vh;
 	height: 40vh;
@@ -64,15 +61,25 @@ body {
 	position: absolute;
 }
 #loader svg circle {
-	animation: rotateCircle 4s 3s forwards;
-
+	animation: rotateCircle 5s 3s forwards;
 }
+
+#input {
+	width: 37vh;
+	height: 37vh;
+	position: absolute;
+	border-radius: 50%;
+	border: 2px solid rgba(255,255,255,1);
+}
+
 @keyframes rotateCircle {
-	 0% {stroke-dashoffset: 320;}
-	24% {stroke-dashoffset: 270;}
-	25% {stroke-dashoffset: 270;}
-	50% {stroke-dashoffset: 160;}
-	75% {stroke-dashoffset: 86;}
+	 0% {stroke-dashoffset: 126vh;}
+	24% {stroke-dashoffset: 94.5vh;}
+	25% {stroke-dashoffset: 94.5vh;}
+	50% {stroke-dashoffset: 63vh;}
+	51% {stroke-dashoffset: 63vh;}
+	75% {stroke-dashoffset: 31.5vh;}
+	76% {stroke-dashoffset: 31.5vh;}
 	100% {stroke-dashoffset: 0;}
 }
 
