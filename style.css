@@ -104,7 +104,7 @@ body {
 	width: 125px;
 	height: 125px;
 	position: absolute;
-	animation: pictures 3s 3s, begin 2s 1.5s;
+	animation: pictures 2s 3s, begin 2s 1.5s;
 	animation-iteration-count: 3, 1;
 	animation-timing-function: step-end, ease;
 	animation-fill-mode: forwards;
@@ -139,14 +139,14 @@ body {
 	transform: translateX(-50%);
 }
 
-.date span:nth-child(2) {
+.date span:nth-child(4) {
 	animation-delay: 4s;
 }
 
 .date span:nth-child(3) {
 	animation-delay: 5s;
 }
-.date span:nth-child(4) {
+.date span:nth-child(2) {
 	animation-delay: 6s;
 }
 
@@ -166,7 +166,7 @@ body {
 @keyframes leftToRight {
 	0% { opacity: 0; }
 	5% { opacity: 0; transform: translateX(-100px); }
-	10% {opacity: 1;transform: translateX(-50%);}
+	10% {opacity: 0;transform: translateX(-50%);}
 	25% {opacity: 1;transform: translateX(-50%);}
 	30% { opacity: 0; transform: translateX(100px); }
 	80% { opacity: 0; }
@@ -192,12 +192,6 @@ body {
 	100% {opacity: 1;transform: translateY(-60px);}
 }
 
-/*@keyframes month_appear {
-	0% {transform: translateY(0px);}
-	100% {transform: translateY(-60px);}
-}
-*/
-
 #intro {
 	display: flex;
 	flex-wrap: wrap;
@@ -212,7 +206,7 @@ body {
 }
 
 #intro p {
-	align-self:  center;
+	align-self: center;
 	position: absolute;
 	text-align: center;
 	width: 80%;
@@ -237,12 +231,21 @@ body {
 	position: absolute;
 	top: 65%;
 	letter-spacing: 3px;
+	animation-name: button_appear;
+	animation-delay: 9s;
+	animation-fill-mode: forwards;
+	animation-timing-function: linear;
 }
 
 
 #discover:hover {
 	background-color: red;
 	color: white;
+}
+
+@keyframes button_appear {
+	0% {opacity: 0;transform: translateY(0px);}
+	100% {opacity: 1;transform: translateY(-20px);}	
 }
 
 @keyframes showDiv {
