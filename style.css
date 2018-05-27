@@ -70,6 +70,9 @@ body {
 	position: absolute;
 	border-radius: 50%;
 	border: 2px solid rgba(255,255,255,1);
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
 }
 
 @keyframes rotateCircle {
@@ -85,9 +88,6 @@ body {
 
 .pie {
 	border: 2px solid #FF4D4D;
-	/*animation: radius;
-	animation-delay: 3s;
-	animation-iteration-count: 1;*/
 }
 
 #round {
@@ -104,7 +104,7 @@ body {
 	width: 125px;
 	height: 125px;
 	position: absolute;
-	animation: pictures 3s 2s, begin 2s 1s;
+	animation: pictures 3s 3s, begin 2s 1.5s;
 	animation-iteration-count: 3, 1;
 	animation-timing-function: step-end, ease;
 	animation-fill-mode: forwards;
@@ -115,9 +115,13 @@ body {
 	margin-bottom: 2.5rem;
 	align-self: flex-end;
 	text-align: center;
-	/*overflow: hidden;*/
-	animation: text_appear 1s 1.5s 1;
+	animation: text_appear 2s 1s 1;
 	animation-fill-mode: forwards;
+}
+
+.month {
+	animation: text_appear 2s 1s 1;
+	animation-fill-mode: backwards;
 }
 
 .date {
@@ -125,15 +129,11 @@ body {
 	overflow: hidden;
 	animation-fill-mode: both;
 }
-/*
-.date:after {
-	content: "";
-	animation: days 3s 2.5s;
-}*/
+
 .date span {
 	animation: leftToRight 7s linear 1 3s;
 	animation-delay: 3s;
-	 opacity: 0; 
+	opacity: 0; 
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
@@ -150,12 +150,6 @@ body {
 	animation-delay: 6s;
 }
 
-/*
-.month {
-	margin-bottom: 1rem;
-}
-*/
-
 @keyframes appearance {
 	from {bottom: 0px;}
 	to {top: 220px;}
@@ -168,14 +162,6 @@ body {
 	75% {background-image: url(image/loader/04.png);}
 	100% {background-image: url(image/loader/01.png);}
 }
-/*
-@keyframes days {
-	0% {content:"13 Thursday";}
-	30% {content:"14 Friday";}
-	60% {content:"15 Saturday";}
-	100% {content:"16 Sunday";}
-}
-*/
 
 @keyframes leftToRight {
 	0% { opacity: 0; }
@@ -200,27 +186,19 @@ body {
 	to {transform: translateY(60px);}
 }
 
-/*@keyframes radius {
-	0% {}
-}*/
-
 @keyframes text_appear {
-	from {transform: translateY(0px);}
-	to {transform: translateY(-60px);}
+	0% {opacity: 0;transform: translateY(0px);}
+	75% {opacity: 1;transform: translateY(-40px);}
+	100% {opacity: 1;transform: translateY(-60px);}
 }
 
-
-/*@keyframes radius {*/
-	/*0% {*//*border-radius: 185px; border-color: red*//*outline: 5px red; transform: rotate(90deg);}
-	30% {outline: 5px red; transform: rotate(180deg);}
-	60% {outline: 5px red; transform: rotate(270deg);}
-	100% {outline: 5px red; transform: rotate(360deg);}*/	
-/*}*/
-
-
+/*@keyframes month_appear {
+	0% {transform: translateY(0px);}
+	100% {transform: translateY(-60px);}
+}
+*/
 
 #intro {
-	/*display: none;*/
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -235,7 +213,6 @@ body {
 
 #intro p {
 	align-self:  center;
-	/* align-items: center; */
 	position: absolute;
 	text-align: center;
 	width: 80%;
@@ -243,14 +220,11 @@ body {
 
 #tower {
 	padding-top: 230px;
-	/* object-position:  center; */
 	width: 40px;
 	height: 60px;
 }
 
 #discover {
-	/* align-self: flex-end; */
-	/* align-content:  flex-end; */
 	align-items: flex-end;
 	text-align: center;
 	background: #fff;
@@ -261,9 +235,14 @@ body {
 	width: 190px;
 	line-height: 51px;
 	position: absolute;
-	/* left: 50%; */
 	top: 65%;
 	letter-spacing: 3px;
+}
+
+
+#discover:hover {
+	background-color: red;
+	color: white;
 }
 
 @keyframes showDiv {
