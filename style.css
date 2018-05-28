@@ -212,7 +212,7 @@ body {
 	position: absolute;
 	font-size: 29px;
 	overflow: hidden;
-	animation: bgImg 1s 9s, last_appear 0.5s 8s; 
+	animation: bgImg 1s 8.5s, last_appear 0.5s 9s; 
 	animation-fill-mode: forwards, backwards; 
 	animation-timing-function: none, linear;
 }
@@ -283,10 +283,7 @@ body {
 @keyframes imgChange
 {
     from {background: #00007E;}
-    to {
-    	background: url(image/map.jpg);
-		opacity:0.3;
-	}
+    to { background: url(image/map.jpg); opacity:0.3;}
 }
 
 @keyframes bgImg {
