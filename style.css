@@ -10,13 +10,11 @@ body {
 
 #bgImg {
 	animation: imgChange 0.5s 9s forwards;
-    position:absolute;
-    top:0;
+    /*position:absolute;*/
+    /*top:0;*//*
     bottom:0;
     right:0;
-    left:0;
-    background-repeat: no-repeat;
-    background-size: cover;
+    left:0;*/
 }
 
 
@@ -245,12 +243,19 @@ body {
 	animation-fill-mode: forwards;
 	animation-timing-function: linear;
 	transition: background .5s;
+	font-size: 12px;
+	font-family: "brandon_grotesquemedium";
 }
 
 
 #discover:hover {
-	background-color: red;
-	color: white;
+	animation: change_color .5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes change_color {
+	from {background-color: white;}
+	to {background-color: #FF2626;}
 }
 
 @keyframes last_appear {
@@ -275,10 +280,16 @@ body {
 @keyframes imgChange
 {
     from {background: #00007E;}
-    to { background: url(image/map.jpg); opacity:0.3;}
+    to { background: background-image: url(image/map.jpg), url(image/clouds/1.png), url(image/clouds/2.png),	
+    	url(image/clouds/3.png), url(image/clouds/4.png), url(image/clouds/5.png), url(image/clouds/6.png), url(image/clouds/7.png);
+		background-repeat: no-repeat;
+		background-size: cover, auto, auto, auto, auto, auto, auto, auto;
+		background-position: absolute, left top, left bottom, right top, right bottom, center top, center top, center center, center bottom;
+		opacity: 0.7, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5;
+		}
 }
 
 @keyframes bgImg {
 	0%, 99%  {background-color: transparent;}
-	to {background-color: rgba(25, 42, 117, .7)};
+	to {background-color: rgba(25, 42, 117, .7);}
 }
