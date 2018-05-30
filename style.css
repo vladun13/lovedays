@@ -10,11 +10,13 @@ body {
 
 #bgImg {
 	animation: imgChange 0.5s 9s forwards;
-    /*position:absolute;*/
-    /*top:0;*//*
+    position:absolute;
+    top:0;
     bottom:0;
     right:0;
-    left:0;*/
+    left:0;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -251,6 +253,90 @@ body {
 #discover:hover {
 	animation: change_color .5s;
 	animation-fill-mode: forwards;
+	color: white;
+}
+
+/*#cloud_1 {
+	background: url(image/clouds/1.png);
+	position: absolute;
+	opacity: 1;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	animation: cloud_appear .5s 9s forwards;
+
+}
+
+#cloud_2 {
+	background: url(image/clouds/2.png);
+	position: absolute;
+	opacity: 1;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	animation: cloud_appear .5s 9s forwards;
+}
+
+#cloud_3 {
+	background: url(image/clouds/3.png);
+	position: absolute;
+	opacity: 1;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	animation: cloud_appear .5s 9s forwards;
+}
+
+#cloud_4 {
+	background: url(image/clouds/4.png);
+	position: absolute;
+	opacity: 1;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	animation: cloud_appear .5s 9s forwards;
+}
+
+#cloud_5 {
+	background: url(image/clouds/5.png);
+	position: absolute;
+	opacity: 1;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	animation: cloud_appear .5s 9s forwards;
+}
+
+#cloud_6 {
+	background: url(image/clouds/6.png);
+	position: absolute;
+	opacity: .7;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	animation: cloud_appear .5s 9s forwards;
+}
+
+
+#cloud_7 {
+	background: url(image/clouds/7.png);
+	position: absolute;
+	opacity: .7;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	animation: cloud_appear .5s 9s forwards;
+}
+
+@keyframes cloud_appear {
+	0% {display: none;}
+	100% {display: block;}
+}
+*/
+#clouds {
+	background-image: url(image/clouds/6.png);
+	background-size: 100% 100%;
+	position: absolute;
 }
 
 @keyframes change_color {
@@ -280,16 +366,10 @@ body {
 @keyframes imgChange
 {
     from {background: #00007E;}
-    to { background: background-image: url(image/map.jpg), url(image/clouds/1.png), url(image/clouds/2.png),	
-    	url(image/clouds/3.png), url(image/clouds/4.png), url(image/clouds/5.png), url(image/clouds/6.png), url(image/clouds/7.png);
-		background-repeat: no-repeat;
-		background-size: cover, auto, auto, auto, auto, auto, auto, auto;
-		background-position: absolute, left top, left bottom, right top, right bottom, center top, center top, center center, center bottom;
-		opacity: 0.7, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5;
-		}
+    to { background: url(image/map.jpg); opacity:0.3;}
 }
 
 @keyframes bgImg {
 	0%, 99%  {background-color: transparent;}
-	to {background-color: rgba(25, 42, 117, .7);}
+	to {background-color: rgba(25, 42, 117, .7)};
 }
