@@ -217,7 +217,6 @@ body {
 #tower {
 	display: flex;
 	margin: auto;
-	margin-top: 300px;
 	background-image: url(image/loader/04.png);
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -238,7 +237,7 @@ body {
 	border: none;
 	line-height: 49px;
 	position: absolute;
-	top: 65%;
+	top: 80%;
 	letter-spacing: 3px;
 	animation-name: button_appear;
 	animation-delay: 9s;
@@ -281,4 +280,14 @@ body {
 @keyframes bgImg {
 	0%, 99%  {background-color: transparent;}
 	to {background-color: rgba(25, 42, 117, .7)};
+}
+
+
+@media only screen and (max-width: 767px) {
+	#awwards {display: none;}
+	#intro p {font-size:21px;left:0;margin:0 5%;top:45%;width:85%;}
+}  
+
+@media (max-width:480px) {
+	
 }
