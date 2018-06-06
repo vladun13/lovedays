@@ -248,7 +248,7 @@ body {
 	top: 70%;
 	letter-spacing: 3px;
 	animation-name: button_appear;
-	animation-delay: 9s;
+	animation-delay: 10s;
 	animation-fill-mode: forwards;
 	animation-timing-function: linear;
 	transition: background .5s;
@@ -316,8 +316,10 @@ body {
 
 #cloud_2 {
 	background: url(image/clouds/2.png);
-	top: -10%; left: -10%;
-	width: 25%; height: 24%;
+	top: -10%;
+	left: -10%;
+	height: 25%;
+	height: 29%;
 }
 
 #cloud_3 {
@@ -340,15 +342,19 @@ body {
 
 #cloud_6 {
 	background: url(image/clouds/6.png);
-	top: 70%; left:  80%;
-	width: 20%; height: 30%;
+	top: 70%;
+	left:  80%;
+	width: 30%;
+	height: 30%;
 }
 
 
 #cloud_7 {
 	background: url(image/clouds/7.png);
-	top: 100%; left:  100%;
-	width: 26%; height: 44%;
+	top: 100%;
+	left:  100%;
+	width: 31%;
+	height: 44%;
 }
 
 @keyframes cloud_appear {
