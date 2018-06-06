@@ -1,3 +1,10 @@
+@font-face {
+	font-family: "newbaskerville_ltregular";
+	src: url("fonts/NewBaskerville Regular.ttf") format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
 	border-color: #fff;
 	color: white;
@@ -9,7 +16,7 @@ body {
 }
 
 #bgImg {
-	animation: imgChange 0.5s 9s forwards;
+	animation: imgChange 0.5s 8.5s forwards;
     position:absolute;
     top:0;
     bottom:0;
@@ -40,7 +47,7 @@ body {
 #loader {
 	display: flex;
 	justify-content: center;
-	animation: appearance 1s, finish 1s 8s;
+	animation: appearance .5s, finish .5s 8.5s;
 	animation-fill-mode: forwards;
 	overflow: hidden;
 	position: absolute;
@@ -202,7 +209,7 @@ body {
 	position: absolute;
 	font-size: 29px;
 	overflow: hidden;
-	animation: bgImg 1s 8.5s, last_appear 0.5s 9s; 
+	animation: bgImg .5s 8.5s, last_appear .5s 9s; 
 	animation-fill-mode: forwards, backwards; 
 	animation-timing-function: none, linear;
 }
@@ -212,6 +219,7 @@ body {
 	position: absolute;
 	text-align: center;
 	width: 80%;
+	animation: text_par .5s 9.5s forwards;
 }
 
 #tower {
@@ -222,7 +230,7 @@ body {
 	background-position: center center;
 	width: 125px;
 	height: 125px;
-	animation: tower_up 1.5s linear 8.5s 1 forwards;
+	animation: tower_up 1.5s linear 9s 1 forwards;
 }
 
 #discover {
@@ -237,7 +245,7 @@ body {
 	border: none;
 	line-height: 49px;
 	position: absolute;
-	top: 80%;
+	top: 70%;
 	letter-spacing: 3px;
 	animation-name: button_appear;
 	animation-delay: 9s;
@@ -274,7 +282,7 @@ body {
 @keyframes imgChange
 {
     from {background: #00007E;}
-    to { background: url(image/map.jpg); opacity:0.3;}
+    to { background: url(image/map.jpg);}
 }
 
 @keyframes bgImg {
@@ -282,6 +290,71 @@ body {
 	to {background-color: rgba(25, 42, 117, .7)};
 }
 
+#clouds {
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#clouds > div {
+	position: absolute;
+	opacity: 0;
+	transform: scale(8);
+	animation: cloud_appear .5s 8.5s forwards;
+}
+
+#cloud_1 {
+	background: url(image/clouds/1.png);
+	top: 0;
+	left: 0;
+	width: 23%;
+	height: 23%;
+}
+
+#cloud_2 {
+	background: url(image/clouds/2.png);
+	top: -10%; left: -10%;
+	width: 25%; height: 24%;
+}
+
+#cloud_3 {
+	background: url(image/clouds/3.png);
+	top: -30%; left: -25%;
+	width: 34%; height: 35%;
+}
+
+#cloud_4 {
+	background: url(image/clouds/4.png);
+	top: 40%; left: 10%;
+	width: 20%; height: 23%;
+}
+
+#cloud_5 {
+	background: url(image/clouds/5.png);
+	top: 50%; left:  40%;
+	width: 15%; height: 16%;
+}
+
+#cloud_6 {
+	background: url(image/clouds/6.png);
+	top: 70%; left:  80%;
+	width: 20%; height: 30%;
+}
+
+
+#cloud_7 {
+	background: url(image/clouds/7.png);
+	top: 100%; left:  100%;
+	width: 26%; height: 44%;
+}
+
+@keyframes cloud_appear {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
 
 @media only screen and (max-width: 767px) {
 	#awwards {display: none;}
